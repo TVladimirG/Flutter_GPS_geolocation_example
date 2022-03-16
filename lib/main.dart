@@ -18,10 +18,16 @@ class MyApp extends StatelessWidget {
             create: (context) => GeoDataProvider()),
       ],
       child: MaterialApp(
-        title: 'GPS Geolocator',
+        debugShowCheckedModeBanner: false,
+        darkTheme: ThemeData.dark(),
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
+        themeMode: ThemeMode.dark,
+        title: 'GPS Geolocator',
+        // theme: ThemeData(
+        //   primarySwatch: Colors.blue,
+        // ),
         home: const HomePage(),
       ),
     );

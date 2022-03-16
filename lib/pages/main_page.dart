@@ -12,8 +12,9 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('GPS example'),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.start,
           children: const [
             ShowAddress(),
@@ -69,7 +70,7 @@ class ShowLocation extends StatelessWidget {
   Widget build(BuildContext context) {
     // log('build ShowCurrentLocation');
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(8.0),
       child: Consumer<GeoDataProvider>(
         builder: (context, value, child) {
           final _currentPosition = value.newPosition;
@@ -105,7 +106,7 @@ class ShowTime extends StatelessWidget {
     // log('build ShowCurrentTime');
 
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(8.0),
       child: Consumer<GeoDataProvider>(
         builder: (context, value, child) {
           final thisInstant = DateTime.now();
@@ -136,7 +137,7 @@ class ShowSpeed extends StatelessWidget {
     // log('build ShowCurrentSpeed');
 
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(8.0),
       child: Consumer<GeoDataProvider>(
         builder: (context, value, child) {
           return Text(
@@ -160,7 +161,7 @@ class ShowDistanceFilter extends StatelessWidget {
     // log('build ShowDistanceFilter');
 
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.fromLTRB(24.0, 8.0, 24.0, 8.0),
       child: Consumer<GeoDataProvider>(
         builder: (context, value, child) {
           final _included = context.watch<GeoDataProvider>().gpsLaunched;
@@ -227,7 +228,7 @@ class ShowTotalDist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(8.0),
       child: Consumer<GeoDataProvider>(
         builder: (context, value, child) {
           return Text(
